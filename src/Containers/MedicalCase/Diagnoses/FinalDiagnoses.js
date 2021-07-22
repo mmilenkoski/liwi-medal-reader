@@ -14,6 +14,7 @@ import {
   ProposedDiagnoses,
   AdditionalDiagnoses,
   CustomDiagnoses,
+  LoaderList,
 } from '@/Components'
 import { useTheme } from '@/Theme'
 import SetDiagnoses from '@/Store/MedicalCase/Diagnoses/SetDiagnoses'
@@ -27,8 +28,13 @@ const FinalDiagnosesMedicalCaseContainer = () => {
 
   useEffect(() => dispatch(SetDiagnoses.action({})), [])
   const versionName = useSelector(state => state.algorithm.item.version_name)
+  const diagnosesLoading = useSelector(
+    state => state.medicalCase.setDiagnoses.loading,
+  )
 
-  return (
+  return diagnosesLoading ? (
+    <LoaderList />
+  ) : (
     <ScrollView style={Gutters.regularHPadding}>
       <SectionHeader
         label={t('containers.medical_case.diagnoses.proposed_title', {
