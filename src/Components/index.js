@@ -80,6 +80,7 @@ export { default as RegistrationHeader } from './MedicalCase/RegistrationHeader'
 // Modals
 export { default as CustomModal } from './Modal/Index'
 export { default as Emergency } from './Modal/Content/Emergency'
+export { default as Predictions } from './Modal/Content/Predictions'
 export { default as ExitMedicalCase } from './Modal/Content/ExitMedicalCase'
 export { default as Lock } from './Modal/Content/Lock'
 export { default as ExitApp } from './Modal/Content/ExitApp'

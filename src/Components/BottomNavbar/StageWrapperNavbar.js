@@ -100,6 +100,15 @@ const StageWrapperNavbar = ({ stageIndex }) => {
     return () => backHandler.remove()
   }, [])
 
+  const openPredictions = async () => {
+    await dispatch(
+      SetParams.action({
+        type: 'predictions',
+      }),
+    )
+    await dispatch(ToggleVisibility.action({}))
+  }
+
   /**
    * Re dispatches the step verification process
    * @returns {Promise<void>}
@@ -304,6 +313,14 @@ const StageWrapperNavbar = ({ stageIndex }) => {
 
   return (
     <View style={bottomNavbar.stageWrapperContainer}>
+    <View style={bottomNavbar.actionButton}>
+              <SquareButton
+                label='Predictions'
+                filled
+                disabled={loading}
+                onPress={() => openPredictions()}
+              />
+            </View>
       <View style={[Layout.fill, Layout.row]}>
         {stageIndex > 0 ? (
           <View style={bottomNavbar.actionButton}>

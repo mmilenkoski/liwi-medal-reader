@@ -14,4 +14,8 @@ module.exports = {
       },
     }),
   },
-}
+  resolver: {
+    assetExts: ['bin', 'txt', 'jpg', 'ttf', 'png'],
+    sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx'],
+  },
+};

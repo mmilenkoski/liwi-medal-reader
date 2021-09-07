@@ -11,7 +11,7 @@ import Modal from 'react-native-modal'
  */
 import { useTheme } from '@/Theme'
 import ToggleVisibility from '@/Store/Modal/ToggleVisibility'
-import { Emergency, Lock, ExitMedicalCase, ExitApp, Icon } from '@/Components'
+import { Emergency, Lock, ExitMedicalCase, ExitApp, Icon, Predictions } from '@/Components'
 import DestroyMedicalCase from '@/Store/MedicalCase/Destroy'
 import DestroyPatient from '@/Store/Patient/Destroy'
 
@@ -50,6 +50,8 @@ const CustomModal = () => {
         return <ExitMedicalCase />
       case 'exitApp':
         return <ExitApp />
+      case 'predictions':
+        return <Predictions />
       default:
         return null
     }
